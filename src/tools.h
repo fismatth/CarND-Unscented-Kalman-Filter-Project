@@ -9,20 +9,26 @@ using namespace std;
 
 class Tools {
 public:
-  /**
-  * Constructor.
-  */
-  Tools();
+	/**
+	 * Constructor.
+	 */
+	Tools();
 
-  /**
-  * Destructor.
-  */
-  virtual ~Tools();
+	/**
+	 * Destructor.
+	 */
+	virtual ~Tools();
 
-  /**
-  * A helper method to calculate RMSE.
-  */
-  VectorXd CalculateRMSE(const vector<VectorXd> &estimations, const vector<VectorXd> &ground_truth);
+	/**
+	 * A helper method to calculate RMSE.
+	 */
+	VectorXd CalculateRMSE(const vector<VectorXd> &estimations,
+			const vector<VectorXd> &ground_truth);
+
+	static void ConvertPolar2Cartesian(double rho, double phi, double& px,
+			double& py);
+
+	static double NormalizeAngle(double angle);
 
 };
 
